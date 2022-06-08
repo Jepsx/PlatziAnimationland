@@ -16,24 +16,13 @@
 html{
     font-size: 65.2%;
 }
-/* 
-body{
-    counter-reset: game;
-}
-
-input:checked{
-    counter-increment: game;
-}
-
-.total-count::after{
-    content: counter(game);
-} */
 body{
     display: grid;
     width: 100%;
     height: 100vh;
     place-items: center;
 }
+
 .phone{
     position: relative;
     height: 600px;
@@ -44,7 +33,31 @@ body{
     background-color: var(--lightBlue);
     box-shadow: var(--shadow)
 }
+.phone > .phone__header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    margin-block-start: 40px;
+}
 
+.phone__header > .phone__header--title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.phone__header--title > img{
+    width: 90%;
+}
+.phone__header--subtitle {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: var(--lightBrown);
+
+}
 .layer-1{
     position: absolute;
     z-index: 1;
@@ -52,7 +65,41 @@ body{
     width: 80px;
     bottom: 0;
     right: 60px;
+
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
+
+@keyframes layer{
+    0%{
+        bottom: 0;
+    }  
+    10%{
+        bottom: -20px;
+    }  
+    50%{
+        bottom: -80px;
+    }
+    60%{
+        bottom: -40px;
+    } 
+    90%{
+        bottom: 0px;
+    }
+}
+
+.layer-1 input[type=checkbox], .layer-2 input[type=checkbox], .layer-4 input[type=checkbox],.layer-6 input[type=checkbox]{
+    appearance: none;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 2;
+}
+
+
 .layer-2{
     position: absolute;
     z-index: 2;
@@ -60,6 +107,29 @@ body{
     width: 80px;
     bottom: 0;
     left: 60px;
+
+    animation-name: layer2;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes layer2{
+    0%{
+        bottom: 0;
+    }  
+    10%{
+        bottom: -20px;
+    }  
+    50%{
+        bottom: -80px;
+    }
+    60%{
+        bottom: -40px;
+    } 
+    90%{
+        bottom: 0px;
+    }
 }
 .layer-3{
     position: absolute;
@@ -81,6 +151,29 @@ body{
     width: 80px;
     bottom: 0;
     left: 10px;
+
+    animation-name: layer4;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes layer4{
+    0%{
+        bottom: 0;
+    }  
+    10%{
+        bottom: -20px;
+    }  
+    50%{
+        bottom: -80px;
+    }
+    60%{
+        bottom: -40px;
+    } 
+    90%{
+        bottom: 0px;
+    }
 }
 .layer-5{
     position: absolute;
@@ -100,7 +193,31 @@ body{
     height: 300px;
     bottom: 0;
     right: 20px;
+
+    animation-name: layer6;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
 }
+
+@keyframes layer6{
+    0%{
+        bottom: 0;
+    }  
+    10%{
+        bottom: -20px;
+    }  
+    50%{
+        bottom: -80px;
+    }
+    60%{
+        bottom: -40px;
+    } 
+    90%{
+        bottom: 0px;
+    }
+}
+
 .layer-7{
     position: absolute;
     z-index: 7;
